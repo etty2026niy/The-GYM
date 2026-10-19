@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task manager</title>
+    
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+/>
+<link rel="stylesheet" href="task.css">
+
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Task Manager</h1>
+        </div>
+        <nav>
+            
+        </nav>
+    </header>
+    <main>
+        <div class="taskList">
+            <div class="filtering">
+                <div><label for="filterStatus">Filter by Status:</label>
+                <select id="filterStatus" name="filterStatus">
+                    <option value="all">All</option>
+                    <option value="todo">To Do</option>
+                    <option value="in-progress">In Progress</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+            <div>
+                <label for="searchTask">Search:</label>
+                <input type="text" id="searchTask" placeholder="Search tasks...">
+            </div>
+            <div class="sort">
+                <label for="sortTasks">Sort by:</label>
+                <select id="sortTasks" name="sortTasks">
+                    <option value="dueDate">Due Date (soonest first)</option>
+                    <option value="priority">Priority (high to low)</option>
+                    <option value="name">Name (A-Z)</option>
+                </select>
+            </div>    
+            <button class="addTask">Add New Task</button>
+            </div>
+            <p class="noTasksMessage" hidden>No tasks match your search or status filter.</p>
+            <div class="task"
+                data-description="Complete the project by the due date."
+                data-due-date="2024-06-15"
+                data-priority="high"
+                data-status="Pending">
+                <h3>Work on project</h3>
+                <div id="taskActions">
+                    <div class="countdown" aria-live="polite"></div>
+                    <p class="taskStatus" style="font-size: 14px; font-style: italic;">Status: Pending</p>
+                    <div class="taskActions">
+                        <button class="edit-btn" title="Edit">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+                        <button class="delete-btn" title="Delete">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                        <button class="done-btn" title="Mark as Completed">
+                            <i class="fa-solid fa-check"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+        <form action="">
+            <h2>Add New Task</h2>
+            <label for="taskName">Task Name:</label>
+            <input type="text" id="taskName" name="taskName" required>
+            <label for="taskDescription">Task Description:</label>
+            <textarea id="taskDescription" name="taskDescription" required></textarea>
+            <label for="dueDate">Due Date:</label>
+            <input type="date" id="dueDate" name="dueDate" required>
+            <label for="dueTime">Due Time:</label>
+            <input type="time" id="dueTime" name="dueTime" required>
+            <label for="priority">Priority:</label>
+            <select id="priority" name="priority" required>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+            <button type="submit" class="addTask">Add Task</button>
+
+        </form>
+        <div class="taskDetails">
+            <h2>Task Details</h2>
+            
+            <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                <tr width="100%">
+                    <td style="background-color: #dc2626; color: white; width: 25%;">High Priority</td>
+                    <td style="background-color: #16a34a; color: white; width: 50%;">Medium Priority</td>
+                    <td style="background-color: #3b82f6; color: white; width: 75%;">Low Priority</td>
+                </tr>
+            </table>
+            <div class="taskDetailContent"></div>
+        </div>
+    </main>
+    <dialog class="delete-confirmation" aria-labelledby="deleteConfirmationTitle">
+        <h2 id="deleteConfirmationTitle">Delete task?</h2>
+        <p>Are you sure you want to delete <strong class="deleteTaskName"></strong>?</p>
+        <div class="delete-confirmation-actions">
+            <button type="button" class="cancelDelete">No</button>
+            <button type="button" class="confirmDelete">Yes, delete</button>
+        </div>
+    </dialog>
+</body>
+
+<script src="task.js"></script>
+</html>

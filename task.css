@@ -1,0 +1,199 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 20px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+}
+form{
+     margin: 0px 50px;
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    border: 1px solid teal;
+    border-radius: 10px;
+    height: 85vh;
+    padding: 20px;
+    background-color: rgb(161, 201, 236);
+    align-items: space-around;
+    justify-content: space-around;
+    font-size: 14px; font-style: italic;
+}
+
+button {
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.edit-btn {
+  color: blue;
+}
+
+.delete-btn {
+  color: #dc2626;
+}
+
+.done-btn {
+  color: green;
+}
+
+button:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
+}
+.task{
+    border-left: 5px solid blue;
+}
+.task.priority-high{
+    border-left-color: red;
+}
+.task.priority-medium{
+    border-left-color: green;
+}
+.task.priority-low{
+    border-left-color: blue;
+}
+
+input, select, textarea{
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid teal;
+    width: 100%;
+    height: 30px;
+}
+textarea{
+    height: 100px;
+}
+.addTask{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+main{
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+
+} 
+#taskActions{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: space-around;
+    font-size: 11px;
+}
+table{
+    width: 2%;
+}    
+td, th{
+    background-color: rgb(234, 236, 238);
+    color: teal;
+    gap: 10px;
+    text-align: center;
+    width: 30px;
+}
+.taskList{
+
+    display: flex;
+    width: auto;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+   
+} 
+.task{
+    background-color: white;
+     background-color: rgb(161, 201, 236);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+.taskDetails{
+    margin: 20px 50px;
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    border: 1px solid teal;
+    border-radius: 10px;
+    height: 400px;
+    padding: 20px;
+    background-color: rgb(161, 201, 236);
+    align-items: space-around;
+    justify-content: space-around;
+    font-size: 14px; font-style: italic;
+} 
+.delete-confirmation{
+    position: fixed;
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%);
+    width: min(90vw, 360px);
+    border: 1px solid teal;
+    border-radius: 10px;
+    padding: 24px;
+    background-color: white;
+    color: #1f2937;
+}
+.delete-confirmation::backdrop{
+    background-color: rgba(0, 0, 0, 0.45);
+}
+.delete-confirmation h2{
+    margin-bottom: 12px;
+}
+.delete-confirmation-actions{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+.delete-confirmation-actions button{
+    border-radius: 5px;
+    padding: 8px 14px;
+}
+.cancelDelete{
+    background-color: #e5e7eb;
+}
+.confirmDelete{
+    background-color: #dc2626;
+    color: white;
+}
+.filtering{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}                                    
+header{
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: teal;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+}
+main{
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+
+}
